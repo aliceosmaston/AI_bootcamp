@@ -8,145 +8,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --brand: #1476ff;           /* accent colour for buttons / icons             */
-      --bg:    #ffffff;           /* page background                               */
-      --text:  #222;              /* body text colour                              */
-      --muted: #6b7280;           /* muted grey                                    */
+      --brand:#1476ff; /* accent colour */
+      --bg:#ffffff;
+      --text:#222;
+      --muted:#6b7280;
     }
 
-    * { box-sizing: border-box; }
-    html,body { margin: 0; padding: 0; font-family: "Poppins", system-ui, sans-serif; background: var(--bg); color: var(--text); scroll-behavior: smooth; }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth;}
 
     /* ---------------- HERO ---------------- */
-    header.hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      color: #fff;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                  url("https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=2100&q=80") center/cover fixed;
+    header.hero{
+      position:relative;
+      min-height:70vh;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+      padding:1rem;color:#fff;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://github.com/aliceosmaston/AI_bootcamp/blob/main/Lab%20photo%20pic.jpg?raw=true") center / cover fixed;
     }
-
-    .profile-pic {
-      width: 150px; height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,.25);
-      margin-bottom: 1.25rem;
+    .profile-pic{
+      width:150px;height:150px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.25);margin-bottom:1.25rem;
     }
-
-    .hero h1 { font-size: 2.5rem; margin: .25rem 0; font-weight: 700; }
-    .hero .subtitle { font-size: 1.15rem; font-weight: 400; margin-bottom: 1.5rem; }
+    .hero h1{font-size:2.5rem;margin:.25rem 0;font-weight:700;}
+    .hero .subtitle{font-size:1.15rem;font-weight:400;margin-bottom:1.5rem;}
 
     /* social icons */
-    .social {
-      display: flex;
-      gap: .5rem;
-      margin-bottom: 2rem;
+    .social{display:flex;gap:.5rem;margin-bottom:2rem;}
+    .social a{
+      width:42px;height:42px;display:inline-flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;color:var(--brand);text-decoration:none;font-size:1.25rem;box-shadow:0 2px 4px rgba(0,0,0,.15);transition:transform .2s;
     }
-    .social a {
-      width: 42px; height: 42px;
-      display: inline-flex; justify-content: center; align-items: center;
-      border-radius: 50%;
-      background: #fff;
-      color: var(--brand);
-      text-decoration: none;
-      font-size: 1.25rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,.15);
-      transition: transform .2s;
-    }
-    .social a:hover { transform: translateY(-2px); }
+    .social a:hover{transform:translateY(-2px);} 
 
     /* pill nav */
-    nav.tabs {
-      position: absolute;
-      bottom: -22px;
-      background: #fff;
-      display: flex;
-      gap: 2rem;
-      padding: .75rem 1.75rem;
-      border-radius: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.15);
-      font-weight: 500;
-      font-size: .95rem;
+    nav.tabs{
+      position:absolute;bottom:-22px;background:#fff;display:flex;gap:2rem;padding:.75rem 1.75rem;border-radius:30px;box-shadow:0 4px 8px rgba(0,0,0,.15);font-weight:500;font-size:.95rem;
     }
-    nav.tabs a {
-      color: var(--text);
-      text-decoration: none;
-      position: relative;
-    }
-    nav.tabs a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: -6px;
-      width: 0%; height: 2px;
-      background: var(--brand);
-      transition: width .25s;
-    }
-    nav.tabs a:hover::after,
-    nav.tabs a:focus::after {
-      width: 100%;
-    }
+    nav.tabs a{color:var(--text);text-decoration:none;position:relative;}
+    nav.tabs a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--brand);transition:width .25s;}
+    nav.tabs a:hover::after,nav.tabs a:focus::after{width:100%;}
 
     /* -------------- MAIN SECTIONS -------------- */
-    section {
-      max-width: 900px;
-      margin: 4.5rem auto 0;
-      padding: 0 1rem 2.5rem;
-    }
-    section h2 { color: var(--brand); margin-top: 0; font-weight: 600; }
-    ul, ol { padding-left: 1.2rem; }
+    section{max-width:900px;margin:4.5rem auto 0;padding:0 1rem 2.5rem;}
+    section h2{color:var(--brand);margin-top:0;font-weight:600;}
+    ul,ol{padding-left:1.2rem;}
+    .card{background:#fff;border-radius:12px;padding:1.25rem 1.35rem;box-shadow:0 2px 6px rgba(0,0,0,.08);margin-bottom:1.5rem;}
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.25rem 1.35rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,.08);
-      margin-bottom: 1.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: .9rem;
-      color: var(--muted);
-    }
+    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:var(--muted);}
 
     /* -------------- RESPONSIVE -------------- */
-    @media (min-width: 700px) {
-      .hero h1 { font-size: 3rem; }
-      .hero .subtitle { font-size: 1.3rem; }
-      nav.tabs { font-size: 1rem; }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body { background: #111; color: #eee; }
-      section h2 { color: #62a5ff; }
-      .card { background: #1b1b1b; }
-      nav.tabs { background: #1b1b1b; box-shadow: 0 4px 8px rgba(0,0,0,.4); }
-      nav.tabs a { color: #eee; }
-    }
+    @media(min-width:700px){.hero h1{font-size:3rem;}.hero .subtitle{font-size:1.3rem;}nav.tabs{font-size:1rem;}}
+    @media(prefers-color-scheme:dark){body{background:#111;color:#eee;}section h2{color:#62a5ff;}.card{background:#1b1b1b;}nav.tabs{background:#1b1b1b;box-shadow:0 4px 8px rgba(0,0,0,.4);}nav.tabs a{color:#eee;}}
   </style>
 </head>
 <body>
   <!-- ---------- HERO ---------- -->
-  <header class="hero" id="top">
-    <img class="profile-pic" src="https://github.com/aliceosmaston/AI_bootcamp/blob/main/linkedin%20photo%20pic.jpeg?raw=true" alt="Portrait of Alice Osmaston">
+  <header class="hero">
+    <img class="profile-pic" src="https://github.com/aliceosmaston/AI_bootcamp/blob/main/headshot%20photo%20pic.jpg?raw=true" alt="Portrait of Alice Osmaston">
     <h1>Alice Osmaston</h1>
     <p class="subtitle">PhD Candidate • Infectious Disease Researcher • AI Enthusiast</p>
 
     <!-- social links -->
     <div class="social" aria-label="social links">
-      <a href="#" aria-label="LinkedIn">in</a>
-      <a href="#" aria-label="GitHub">&#xf09b;</a>
-      <a href="#" aria-label="ResearchGate">Rᴳ</a>
-      <a href="#" aria-label="ORCID">iD</a>
+      <a href="https://www.linkedin.com/in/alice-osmaston-455676157/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/aliceosmaston/" target="_blank" rel="noopener" aria-label="GitHub">&#xf09b;</a>
+      <a href="https://www.researchgate.net/profile/Alice-Osmaston-3?ev=prf_overview" target="_blank" rel="noopener" aria-label="ResearchGate">Rᴳ</a>
     </div>
 
     <!-- pill navigation -->
@@ -154,7 +78,6 @@
       <a href="#about-me">About</a>
       <a href="#about-course">Course</a>
       <a href="#submissions">Submissions</a>
-      <a href="#top">Top</a>
     </nav>
   </header>
 
@@ -189,4 +112,29 @@
       </ul>
     </section>
 
-    <section id="sub
+    <section id="submissions">
+      <h2>Weekly Submissions</h2>
+      <h3>Week 1 – Foundations & Prompt Engineering</h3>
+      <p>Assignment: Created this webpage using HTML, CSS and JS and deployed it using github. </p>
+      <h3>Week 2 – AI‑Assisted Writing & Documentation</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 3 – Data Analysis & Dashboards with No‑Code AI</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 4 – Building Custom Chatbots</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 5 – Automating Workflows</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 6 – Image & Video Generation / Editing</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 7 – Integrating AI into Research Projects</h3>
+      <p>Content coming soon…</p>
+      <h3>Week 8 – Capstone & Future Directions</h3>
+      <p>Content coming soon…</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alice Osmaston. All rights reserved.</p>
+  </footer>
+</body>
+</html>
