@@ -4,76 +4,65 @@
   <meta charset="UTF-8">
   <title>Alice Osmaston – Generative AI Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts -->
+  <meta name="color-scheme" content="light">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --brand:#1476ff; /* accent colour */
+      --brand:#1476ff;
       --bg:#ffffff;
-      --text:#222;
+      --text:#222222;
       --muted:#6b7280;
     }
-
     *{box-sizing:border-box;}
-    html,body{margin:0;padding:0;font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth;}
+    html,body{margin:0;padding:0;font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth;color-scheme:light;}
 
     /* ---------------- HERO ---------------- */
-    header.hero{
-      position:relative;
-      min-height:70vh;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-      padding:1rem;color:#fff;
-      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://github.com/aliceosmaston/AI_bootcamp/blob/main/Lab%20photo%20pic.jpg?raw=true") center 40% / cover fixed;
-    }
-    .profile-pic{
-      width:150px;height:150px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.25);margin-bottom:1.25rem;
-    }
+    header.hero{position:relative;min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:1rem;color:#fff;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://github.com/aliceosmaston/AI_bootcamp/blob/main/Lab%20photo%20pic.jpg?raw=true") center 40%/cover no-repeat;background-attachment:fixed;}
+    .profile-pic{width:150px;height:150px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 4px 8px rgba(0,0,0,.25);margin-bottom:1.25rem;}
     .hero h1{font-size:2.5rem;margin:.25rem 0;font-weight:700;}
     .hero .subtitle{font-size:1.15rem;font-weight:400;margin-bottom:1.5rem;}
 
-    /* social icons */
+    /* Social */
     .social{display:flex;gap:.5rem;margin-bottom:2rem;}
-    .social a{
-      width:42px;height:42px;display:inline-flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;color:var(--brand);text-decoration:none;font-size:1.25rem;box-shadow:0 2px 4px rgba(0,0,0,.15);transition:transform .2s;
-    }
+    .social a{width:42px;height:42px;display:inline-flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;color:var(--brand);text-decoration:none;font-size:1.25rem;box-shadow:0 2px 4px rgba(0,0,0,.15);transition:transform .2s;}
     .social a:hover{transform:translateY(-2px);} 
 
-    /* pill nav */
-    nav.tabs{
-      position:absolute;bottom:-22px;background:#fff;display:flex;gap:2rem;padding:.75rem 1.75rem;border-radius:30px;box-shadow:0 4px 8px rgba(0,0,0,.15);font-weight:500;font-size:.95rem;
-    }
+    /* Tabs */
+    nav.tabs{position:absolute;bottom:-22px;background:#fff;display:flex;gap:2rem;padding:.75rem 1.75rem;border-radius:30px;box-shadow:0 4px 8px rgba(0,0,0,.15);font-weight:500;font-size:.95rem;}
     nav.tabs a{color:var(--text);text-decoration:none;position:relative;}
     nav.tabs a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--brand);transition:width .25s;}
     nav.tabs a:hover::after,nav.tabs a:focus::after{width:100%;}
 
-    /* -------------- MAIN SECTIONS -------------- */
+    /* Sections */
     section{max-width:900px;margin:4.5rem auto 0;padding:0 1rem 2.5rem;}
     section h2{color:var(--brand);margin-top:0;font-weight:600;}
     ul,ol{padding-left:1.2rem;}
-    .card{background:#fff;border-radius:12px;padding:1.25rem 1.35rem;box-shadow:0 2px 6px rgba(0,0,0,.08);margin-bottom:1.5rem;}
+    .card{background:hsla(214, 100%, 97%, 1);border-radius:12px;padding:1.25rem 1.35rem;box-shadow:0 2px 6px rgba(0,0,0,.08);margin-bottom:1.5rem;}
+
+    /* Back‑to‑top */
+    .back-top{text-align:right;margin-top:1.5rem;}
+    .back-top a{color:var(--brand);text-decoration:none;font-weight:600;font-size:.9rem;}
+    .back-top a:hover{text-decoration:underline;}
 
     footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:var(--muted);}
 
-    /* -------------- RESPONSIVE -------------- */
     @media(min-width:700px){.hero h1{font-size:3rem;}.hero .subtitle{font-size:1.3rem;}nav.tabs{font-size:1rem;}}
-    @media(prefers-color-scheme:dark){body{background:#111;color:#eee;}section h2{color:#62a5ff;}.card{background:#1b1b1b;}nav.tabs{background:#1b1b1b;box-shadow:0 4px 8px rgba(0,0,0,.4);}nav.tabs a{color:#eee;}}
+    @media(max-width:699px){header.hero{background-attachment:scroll;background-position:center 20%;}}
   </style>
 </head>
-<body>
+<body id="top">
   <!-- ---------- HERO ---------- -->
   <header class="hero">
     <img class="profile-pic" src="https://github.com/aliceosmaston/AI_bootcamp/blob/main/headshot%20photo%20pic.jpg?raw=true" alt="Portrait of Alice Osmaston">
     <h1>Alice Osmaston</h1>
     <p class="subtitle">PhD Candidate • Infectious Disease Researcher • AI Enthusiast</p>
 
-    <!-- social links -->
     <div class="social" aria-label="social links">
       <a href="https://www.linkedin.com/in/alice-osmaston-455676157/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
       <a href="https://github.com/aliceosmaston/" target="_blank" rel="noopener" aria-label="GitHub">&#xf09b;</a>
       <a href="https://www.researchgate.net/profile/Alice-Osmaston-3?ev=prf_overview" target="_blank" rel="noopener" aria-label="ResearchGate">Rᴳ</a>
     </div>
 
-    <!-- pill navigation -->
     <nav class="tabs" aria-label="primary">
       <a href="#about-me">About</a>
       <a href="#about-course">Course</a>
@@ -86,9 +75,9 @@
     <section id="about-me">
       <h2>About Me</h2>
       <div class="card">
-        <p>I'm a final‑year PhD candidate at University College London researching the genetic basis of tuberculosis pathology and transmission in Peru. With experience across academia, biotech start‑ups, and global health projects, I combine wet‑lab expertise with data‑driven insight to improve human health. Fluent in Spanish after 2.5 years of immersive fieldwork, I thrive at the intersection of science and real‑world impact.</p>
-      </div>
-      <h3>Highlights</h3>
+        <h3>Bio</h3>
+        <p>I'm a final‑year PhD candidate at University College London researching the genetic basis of tuberculosis pathology and transmission in Peru. With experience across academia, biotech start‑ups, and global health projects, I combine wet‑lab expertise with data‑driven insight to improve human health. Fluent in Spanish after 2.5 years of immersive fieldwork in Peru.</p>
+        <h3>Highlights</h3>
       <ul>
         <li><strong>Academia:</strong> PhD in Genetic Epidemiology (ongoing), MSc Applied Infectious Disease Epidemiology (Distinction), BSc Cellular &amp; Molecular Medicine (First‑Class Hons).</li>
         <li><strong>Industry experience:</strong> Illumina Accelerator, Mitra Bio, Aarogya AI, Neurolytic Healthcare.</li>
@@ -96,11 +85,14 @@
         <li><strong>Interests:</strong> Global travel, triathlon & rock climbing, piano & violin.</li>
         <li><strong>Languages:</strong> English and Spanish.</li>
       </ul>
+        </div>
+      <p class="back-top"><a href="#top">Back to top ↑</a></p>
     </section>
 
     <section id="about-course">
       <h2>About the Course</h2>
-      <p><em>Generative AI for Work &amp; Research Productivity Bootcamp&nbsp;2025 Q2</em> is an eight‑week, hands‑on program that equips professionals and researchers with practical skills to deploy AI in everyday projects—without writing code.</p>
+      <div class="card">
+      <p><em>Generative AI for Work &amp; Research Productivity Bootcamp 2025 Q2</em> is an eight‑week, hands‑on program that equips professionals and researchers with practical skills to deploy AI in everyday projects—without writing code.</p>
       <h3>Key Skills You’ll Gain</h3>
       <ul>
         <li>Create websites, documents, and presentations with AI assistance.</li>
@@ -110,12 +102,15 @@
         <li>Generate and edit images, videos, and design materials.</li>
         <li>Develop AI solutions that integrate seamlessly into daily work.</li>
       </ul>
+        </div>
+      <p class="back-top"><a href="#top">Back to top ↑</a></p>
     </section>
 
     <section id="submissions">
+      <div class="card">
       <h2>Weekly Submissions</h2>
       <h3>Week 1 – Foundations & Prompt Engineering</h3>
-      <p>Assignment: Created this webpage using HTML, CSS and JS and deployed it using github. </p>
+      <p>Assignment: Created this webpage using HTML, CSS and JS and deployed it using GitHub.</p>
       <h3>Week 2 – AI‑Assisted Writing & Documentation</h3>
       <p>Content coming soon…</p>
       <h3>Week 3 – Data Analysis & Dashboards with No‑Code AI</h3>
@@ -130,6 +125,8 @@
       <p>Content coming soon…</p>
       <h3>Week 8 – Capstone & Future Directions</h3>
       <p>Content coming soon…</p>
+      </div>
+      <p class="back-top"><a href="#top">Back to top ↑</a></p>
     </section>
   </main>
 
